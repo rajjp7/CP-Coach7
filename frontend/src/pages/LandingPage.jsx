@@ -1,140 +1,129 @@
+import React from 'react';
+
+// SVG Icon Components for features
+const AnalyzeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+  </svg>
+);
+
+const PracticeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" />
+  </svg>
+);
+
+const TrackIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-indigo-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+  </svg>
+);
 
 export default function LandingPage() {
   return (
- <div className="relative min-h-screen font-inter bg-radial-spotlight text-white flex flex-col scroll-smooth bg-noise overflow-hidden">
+    <div className="relative min-h-screen font-sans bg-[#0D1117] text-white scroll-smooth overflow-x-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-600/30 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/30 rounded-full filter blur-3xl opacity-20 animate-pulse animation-delay-4000"></div>
 
-   <nav className="fixed top-0 inset-x-0 z-50 flex h-20 font-inter justify-between items-center px-6 py-4 shadow-lg bg-[#111827]/80 backdrop-blur-md border-b border-gray-700">
+      <nav className="fixed top-0 inset-x-0 z-50 flex h-20 justify-between items-center px-4 md:px-8 bg-[#0D1117]/80 backdrop-blur-lg border-b border-gray-800">
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tighter text-white flex items-center">
+          <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Smart</span>
+          <span className="text-indigo-300">CP</span>
+          <span className="text-white">Coach</span>
+        </h1>
+        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+          <a href="#about" className="hover:text-white transition-colors duration-300">About</a>
+          <a href="#features" className="hover:text-white transition-colors duration-300">Features</a>
+          <div className="flex items-center space-x-2">
+            <a href="/login" className="px-4 py-2 rounded-md border border-gray-700 hover:bg-gray-800 hover:text-white transition-colors duration-300">
+              Login
+            </a>
+            <a href="/register" className="px-4 py-2 rounded-md bg-indigo-600 text-white font-semibold hover:bg-indigo-500 transition-colors duration-300 shadow-lg shadow-indigo-600/20">
+              Register
+            </a>
+          </div>
+        </div>
+        <button className="md:hidden text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+      </nav>
 
- <h1 className="text-3xl font-extrabold tracking-tight text-white flex items-center space-x-1">
-  <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent drop-shadow-sm">
-    Smart
-  </span>
-  <span className="text-indigo-400">CP</span>
-  <span className="text-white">Coach</span>
-</h1>
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tighter leading-tight mb-6">
+            Turn <span className="text-red-500">Errors</span> into <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Expertise</span>
+          </h2>
+          <p className="max-w-3xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+            Stop guessing. Start improving. Smart CP Coach analyzes your failed submissions and gives you a focused path to mastery.
+          </p>
+          <a href="/register" className="text-lg font-bold px-8 py-4 rounded-lg bg-white text-gray-900 transform transition-transform duration-300 hover:scale-105 shadow-2xl shadow-white/10">
+            Start Your Journey
+          </a>
+        </section>
 
-  <div className="space-x-10 text-base font-sans">
-    <a
-      href="#about"
-      className="relative text-gray-300 hover:text-white transition duration-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full"
-    >
-      About
-    </a>
-    <a
-      href="#features"
-      className="relative text-gray-300 hover:text-white transition duration-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full"
-    >
-      Features
-    </a>
-    <a
-      href="#testimonials"
-      className="relative text-gray-300 hover:text-white transition duration-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-500 after:transition-all after:duration-300 hover:after:w-full"
-    >
-      Testimonials
-    </a>
-    <a
-      href="/login"
-      className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-indigo-500 px-4 py-2 text-indigo-400 hover:bg-indigo-500 hover:text-white transition duration-300"
-    >
-      Login
-    </a>
-    <a
-      href="/register"
-      className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-indigo-500 px-4 py-2 text-indigo-400 hover:bg-indigo-500 hover:text-white transition duration-300"
-    >
-      Register
-    </a>
-  </div>
-</nav>
+        {/* About Section */}
+        <section id="about" className="py-24 sm:py-32 px-4 bg-black/20">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">What is Smart CP Coach?</h3>
+              <p className="text-gray-400 text-lg leading-relaxed">
+                It’s a straightforward, effective tool for competitive programmers. When a submission fails, our system analyzes the verdict and problem tags to suggest <strong>7 highly relevant problems</strong>.
+                <br/><br/>
+                This isn't about AI magic—it's about structured, targeted practice based on your actual performance, helping you conquer topics one step at a time.
+              </p>
+            </div>
+            <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 shadow-2xl">
+                <div className="relative">
+                    <div className="p-4 bg-[#1a1a1a] rounded-t-lg flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="p-6 bg-[#0D1117] rounded-b-lg text-left font-mono text-sm text-gray-300">
+                        <p><span className="text-red-400">verdict:</span> "WRONG_ANSWER"</p>
+                        <p><span className="text-yellow-400">problem:</span> "1337A - Array Restoring"</p>
+                        <p><span className="text-green-400">tags:</span> ["dp", "math"]</p>
+                        <p className="mt-4 text-indigo-400 animate-pulse">&gt; Generating recommendations...</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
 
+        {/* Features Section */}
+        <section id="features" className="py-24 sm:py-32 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">A Smarter Way to Practice</h3>
+            <p className="text-lg text-gray-400 mb-16 max-w-2xl mx-auto">Focus on what matters most. Our features are designed to eliminate guesswork and accelerate your learning.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-500/20">
+                <AnalyzeIcon />
+                <h4 className="text-xl font-semibold mb-3 text-white">Targeted Analysis</h4>
+                <p className="text-gray-400">Instantly understand why your code failed—whether it's a wrong answer, time limit exceeded, or a runtime error.</p>
+              </div>
+              <div className="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-500/20">
+                <PracticeIcon />
+                <h4 className="text-xl font-semibold mb-3 text-white">Curated Problem Sets</h4>
+                <p className="text-gray-400">Receive 7 hand-picked problems based on similar topics, allowing you to practice efficiently and master concepts.</p>
+              </div>
+              <div className="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-500/20">
+                <TrackIcon />
+                <h4 className="text-xl font-semibold mb-3 text-white">Visualize Your Progress</h4>
+                <p className="text-gray-400">Track solved problems, monitor mastery of different tags, and see your skills improve over time with clear analytics.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-6 min-h-[calc(100vh-5rem)] pt-12">
-        <h2  className="text-[10vw] font-inter font-bold mb-6 text-white tracking-tight leading-tight">
-          Smart CP Coach
-        </h2>
-       <p className="text-4xl md:text-5xl font-semibold font-libre text-gray-300 max-w-4xl mb-8 tracking-tight leading-snug">
-         Every{" "}
-  <span className="text-red-500 drop-shadow-[0_1px_2px_rgba(239,68,68,0.3)] transition duration-300 hover:text-yellow-500">
-    Failed Submission
-  </span>{" "}
-  is a Step Forward.
-</p>
-
-
-      <a href="/register" className="inline-block bg-white text-[#0a0f1a] font-semibold px-8 py-4 rounded-2xl shadow-2xl text-lg tracking-wide transform transition duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] focus:outline-none focus:ring-2 focus:ring-indigo-400">
-  Start Practicing
-</a>
-
-
-      </section>
-
-      {/* About Section */}
-     {/* About Section */}
-<section id="about" className="bg-[#0a0f1a] py-24 px-6">
-  <div className="max-w-4xl mx-auto text-center">
-    <h3 className="text-4xl font-bold mb-6 tracking-tight text-white">About Smart CP Coach</h3>
-    <p className="text-gray-400 text-lg leading-relaxed">
-      Smart CP Coach is a simple, effective tool built for competitive programmers who want to improve their problem-solving step by step. Each time you submit a solution that fails, Smart CP Coach analyzes the verdict and the problem tags. Then, it suggests
-      <strong> 7 carefully selected related problems</strong> you can solve to strengthen your understanding of that topic.
-      No AI, no guesswork—just structured, focused practice based on your actual performance.
-    </p>
-  </div>
-</section>
-
-{/* Features Section */}
-<section id="features" className="py-24 px-6 bg-[#111827]">
-  <div className="max-w-6xl mx-auto text-center">
-    <h3 className="text-4xl font-bold mb-12 tracking-tight text-white">Features</h3>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div className="bg-[#1f2937] p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-        <h4 className="text-xl font-semibold mb-3 text-white">Submission Analysis</h4>
-        <p className="text-gray-400 text-base">
-          Understand exactly why your submission failed: wrong answer, time limit, or runtime error.
-        </p>
-      </div>
-      <div className="bg-[#1f2937] p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-        <h4 className="text-xl font-semibold mb-3 text-white">7 Related Problems</h4>
-        <p className="text-gray-400 text-base">
-          Get 7 recommended problems on similar topics to practice and improve efficiently.
-        </p>
-      </div>
-      <div className="bg-[#1f2937] p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-        <h4 className="text-xl font-semibold mb-3 text-white">Progress Tracking</h4>
-        <p className="text-gray-400 text-base">
-          Keep track of solved problems, tags you've mastered, and your improvement over time.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* Testimonials */}
-<section id="testimonials" className="bg-[#0a0f1a] py-24 px-6">
-  <div className="max-w-4xl mx-auto text-center">
-    <h3 className="text-4xl font-bold mb-12 tracking-tight text-white">What Users Say</h3>
-    <div className="space-y-10">
-      <blockquote className="bg-[#1f2937] p-8 rounded-2xl shadow-lg text-gray-300 hover:shadow-2xl transition duration-300">
-        <p className="italic mb-3">
-          "I finally understood why I kept failing certain problems. The 7 related suggestions helped me fill my knowledge gaps fast."
-        </p>
-        <footer className="text-gray-400 font-semibold">— Arjun, Codeforces Specialist</footer>
-      </blockquote>
-      <blockquote className="bg-[#1f2937] p-8 rounded-2xl shadow-lg text-gray-300 hover:shadow-2xl transition duration-300">
-        <p className="italic mb-3">
-          "It's like having a mentor who always knows what you should practice next—without any AI fluff."
-        </p>
-        <footer className="text-gray-400 font-semibold">— Sneha, 5⭐ Coder</footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-{/* Footer */}
-<footer className="text-center p-6 text-gray-500 text-sm bg-[#111827] border-t border-gray-700">
-  © {new Date().getFullYear()} Smart CP Coach. Built with 💙 for coders, by coders.
-</footer>
-
+      {/* Footer */}
+      <footer className="relative z-10 text-center p-8 text-gray-500 text-sm bg-[#0D1117] border-t border-gray-800">
+        © {new Date().getFullYear()} Smart CP Coach. Built with passion for the competitive programming community.
+      </footer>
     </div>
   );
 }

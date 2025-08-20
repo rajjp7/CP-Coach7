@@ -91,7 +91,6 @@ router.get('/suggestions', auth, async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Fetch all problems
     const problemsResponse = await fetch('https://codeforces.com/api/problemset.problems');
     const problemsData = await problemsResponse.json();
     if (problemsData.status !== 'OK') {
